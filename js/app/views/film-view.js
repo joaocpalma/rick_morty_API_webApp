@@ -15,13 +15,12 @@ fetch("https://rickandmortyapi.com/api/character/")
 
     function drawCharacters(characters) {
         var characterDiv = document.querySelector("#app")
-        
+        console.log(characters)
         characters.forEach(character => {
-            console.log(character)
             var id = character.id
             characterDiv.innerHTML =
             characterDiv.innerHTML +
-            `<div class="card mb-2 mr-2" style="max-width: 540px;">
+            `<div class="card mb-4 mr-4 ml-4" style="max-width: 540px;">
             <div class="row g-0">
               <div class="col-md-4">
                 <img src="${character.image}" class="img-fluid rounded-start" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
@@ -35,16 +34,6 @@ fetch("https://rickandmortyapi.com/api/character/")
                           </button>
                         </div>
                         <div class="modal-body">
-                        <p>
-    <a class="btn btn-primary" data-bs-toggle="collapse" href="#locationExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Location
-  </a>
-</p>
-<div class="collapse" id="locationExample">
-  <div class="card card-body">
-    ${character.location.name}
-  </div>
-</div>
 <p>
     <a class="btn btn-primary" data-bs-toggle="collapse" href="#originExample" role="button" aria-expanded="false" aria-controls="collapseExample">
     Origin
@@ -65,10 +54,11 @@ fetch("https://rickandmortyapi.com/api/character/")
                   </div>
               </div>
               <div class="col-md-8">
-                <div class="card-body i">
-                  <h5 class="card-title">${character.name}</h5>
+                <div class="card-body">
+                  <h5 class="card-title">${character.name} ( ${character.species} )</h5>
                   <p class="card-text">Status: ${character.status}</p>
-                  <p class="card-text">Specie: ${character.species}</p>
+                  <p class="card-text-title">Last known location:</p>
+                  <p class="card-text">${character.location.name}</p>
                   <p class="card-text"><small class="text-body-secondary">${character.type}</small></p>
                 </div>
               </div>
@@ -77,29 +67,6 @@ fetch("https://rickandmortyapi.com/api/character/")
             `
         });    
 }
-
-    function characterInfo(characters){
-
-        var characterDiv = document.querySelector("#myModal")
-        return (
-            '<div>' +
-            '<p><strong>Name: </strong>' +
-            characters.name +
-            '</p>' +
-            '<p><strong>Status: </strong>' +
-            characters.status +
-            '</p>' +
-            '<p><strong>Specie: </strong>' +
-            characters.species +
-            '</p>' +
-            '<p><strong>Type: </strong>' +
-            characters.type +
-            '</p>' +
-            '</div>'
-        );
-    }
-
-
 
     internals.renderCharacter = function(characters) {
         if (internals.elements.characterCard) {

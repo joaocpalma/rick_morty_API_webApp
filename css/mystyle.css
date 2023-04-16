@@ -2,8 +2,43 @@
     background: #fff;
     box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
     box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+    transform: scale(1.1);
     cursor: pointer;
+    transition: all 0.5s ease-in
   }
+
+  #app .card{
+    transition: all 0.5s ease-out;
+  }
+
+.card-body{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.card:hover p{
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.5s ease-in;
+}
+
+.text-center:hover{
+  text-transform: uppercase;
+  transition:all 0.5s ease-in;
+}
+
+.card:hover img{
+  border-style: solid;
+  transform: scale(1.1);
+  transition: all 0.5s ease-in
+}
+
+.card img{
+  border-style: none;
+  transition: all 0.5s ease-out
+}
+
 #myApp {
   background-image: url('https://wallpapercave.com/wp/wp7227935.png');
   background-repeat: no-repeat;
@@ -11,6 +46,30 @@
   background-position: center;
   background-size: cover;
    }
+
+.card-title{
+  font-family: 'DynaPuff';
+  
+}   
+
+.card-text-title{
+  font-family: 'Comfortaa';
+  color: black;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+
+
+
+.card-text{
+  font-family: 'Comfortaa';
+  color: black;
+  visibility: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}   
    
 .text-center{
   background-color: #262C3A;
